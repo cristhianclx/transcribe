@@ -1,0 +1,7 @@
+boto3
+Flask
+Flask-Cors
+Flask-RESTful
+runpod
+twilio
+zappa

@@ -1,0 +1,47 @@
+To deploy:
+
+    python3.12 -m venv venv
+    source venv/bin/activate
+    pip install setuptools --upgrade
+    pip install -r server/requirements.txt
+    cd server
+    zappa deploy main
+    zappa schedule main
+
+To update deploy:
+
+    python3.12 -m venv venv
+    source venv/bin/activate
+    pip install setuptools --upgrade
+    pip install -r server/requirements.txt
+    cd server
+    zappa update main
+    zappa schedule main
+
+To associate domain:
+
+    python3.12 -m venv venv
+    source venv/bin/activate
+    pip install setuptools --upgrade
+    pip install -r server/requirements.txt
+    cd server
+    zappa certify
+
+To undeploy:
+
+    python3.12 -m venv venv
+    source venv/bin/activate
+    pip install setuptools --upgrade
+    pip install -r server/requirements.txt
+    cd server
+    zappa unschedule main
+    zappa undeploy
+
+To check what is going to be uploaded:
+
+    python3.12 -m venv venv
+    source venv/bin/activate
+    pip install setuptools --upgrade
+    pip install -r server/requirements.txt
+    cd server
+    zappa package main -o main.zip

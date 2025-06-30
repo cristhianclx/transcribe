@@ -1,0 +1,26 @@
+To plan infrastructure:
+
+    STAGE=main
+    cd ./infrastructure/
+    terraform fmt -recursive
+    terraform init -backend=true -get=true -reconfigure -upgrade
+    terraform workspace select -or-create $STAGE
+    terraform plan -refresh=true -var-file=./vars/$STAGE.tfvars
+
+To apply infrastructure:
+
+    STAGE=main
+    cd ./infrastructure/
+    terraform fmt -recursive
+    terraform init -backend=true -get=true -reconfigure -upgrade
+    terraform workspace select -or-create $STAGE
+    terraform apply -refresh=true -var-file=./vars/$STAGE.tfvars
+
+To destroy infrastructure:
+
+    STAGE=main
+    cd ./infrastructure/
+    terraform fmt -recursive
+    terraform init -backend=true -get=true -reconfigure -upgrade
+    terraform workspace select -or-create $STAGE
+    terraform destroy -var-file=./vars/$STAGE.tfvars

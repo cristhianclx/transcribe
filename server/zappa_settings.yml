@@ -1,0 +1,45 @@
+main:
+  app_function: main.app
+  aws_region: us-east-1
+  certificate_arn: 
+  cors: true
+  debug: true
+  domain: server.transcribe.demo.pe
+  environment_variables:
+    AWS_REGION: us-east-1
+    RUNPOD_API_KEY: 
+    RUNPOD_ENDPOINT_ID: 
+    TRANSCRIPTIONS_QUEUE_URL: 
+    TWILIO_ACCOUNT_SID: 
+    TWILIO_AUTH_TOKEN:
+  events:
+    - function: tasks.transcriptions
+      event_source:
+        arn:
+        batch_size: 1
+        enabled: true
+  exclude:
+    - boto3
+    - botocore
+    - concurrent
+    - dateutil
+    - s3transfer
+    - scripts
+    - Dockerfile
+    - docker-compose.yml
+    - requirements
+    - requirements.txt
+  exclude_glob:
+    - "*.zip"
+  keep_warm: true
+  lambda_description: server.transcribe.demo.pe
+  log_level: INFO
+  manage_roles: false
+  memory_size: 2048
+  project_name: server-transcribe-demo-pe
+  role_name: server-transcribe-demo-pe-execution-role
+  runtime: python3.12
+  s3_bucket: files.transcribe.demo.pe
+  timeout_seconds: 30
+  touch: true
+  touch_path: /ping/

@@ -1,0 +1,11 @@
+To code:
+
+    npm run dev
+
+To build:
+
+    npm run build
+
+To upload:
+
+    aws s3 sync --exact-timestamps ./dist/ s3://transcribe.demo.pe --delete --acl private

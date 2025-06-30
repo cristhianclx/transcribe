@@ -1,0 +1,19 @@
+To run:
+
+    docker-compose run --service-ports server
+
+To code:
+
+    docker-compose run --service-ports server-bash
+
+To generate settings:
+
+    zappa save-python-settings-file main
+
+To format:
+
+    ./scripts/lint.sh
+
+To verify:
+
+    http GET 127.0.0.1:8080/ping/
