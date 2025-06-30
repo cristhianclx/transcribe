@@ -1,3 +1,5 @@
+AWS side: we used AWS Lambda, in two places (one when twilio webhook is sending audios to our lambda api gateway and we are sending to an AWS queue), and another to get AWS queue items and sending to another service to get real transcription of that to return text to final user.
+
 To deploy:
 
     python3.12 -m venv venv
